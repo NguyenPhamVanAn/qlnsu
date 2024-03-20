@@ -4,18 +4,11 @@
 
 <html lang="en">
 <head runat="server">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
-
-    <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/bundles/modernizr")%>
-    </asp:PlaceHolder>
-
-    <webopt:bundlereference runat="server" path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
-   
+    <title></title>
+ <link href="Content/bootstrap.min.css" rel="stylesheet" />
+ <asp:ContentPlaceHolder ID="head" runat="server">
+ </asp:ContentPlaceHolder>
+ <script src="Scripts/bootstrap.bundle.min.js"></script>
 
 </head>
 <body >
@@ -46,7 +39,7 @@
            
             
   <div class="container-fluid">
-    <a class="navbar-brand btn bg-body" style= "color:salmon; background-image-" href="qlNhanSu.aspx"  > <h3>QUẢN LÝ NHÂN SỰ</h3></a>
+    <a class="navbar-brand btn bg-body" style= "color:salmon; href="qlNhanSu.aspx"  > <h3>QUẢN LÝ NHÂN SỰ</h3></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -62,7 +55,16 @@
           <a class="nav-link btn btn-outline-light  "type="submit" href="qlPhongBan.aspx">Phòng Ban</a>
         </li>
        
-       
+        <!-- Dropdown -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Quản Lý
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="qlTheLoai.aspx">Thể Loại</a>
+        <a class="dropdown-item" href="qlTinTuc.aspx">Tin Tức</a>
+      </div>
+    </li>
        
       </ul>
       <form class="d-flex">
@@ -82,10 +84,10 @@
                
             </footer>
         </div>
-    </form>
-  </div>
-    <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
-    </asp:PlaceHolder>
+    
+  </form>
+    
+     <script src="Scripts/jquery-3.0.0.js"></script>
+  <script src="Scripts/bootstrap.bundle.min.js"></script>
 </body>
 </html>
